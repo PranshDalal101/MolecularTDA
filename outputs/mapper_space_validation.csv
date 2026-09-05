@@ -1,0 +1,29 @@
+drug_name,true_disease,nearest_node,node_majority_disease,node_size,hit
+Icosapent Ethyl,Alzheimer's,cube5_cluster0,Alzheimer's,16,True
+Piromelatine,Alzheimer's,cube11_cluster0,Alzheimer's,4,True
+ODITRASERTIB,Alzheimer's,cube21_cluster0,Alzheimer's,20,True
+Alpha Lipoic Acid,Alzheimer's,cube17_cluster0,Alzheimer's,14,True
+Reldesemtiv,Amyotrophic Lateral Sclerosis,cube21_cluster0,Alzheimer's,71,False
+taurursodiol,Amyotrophic Lateral Sclerosis,cube0_cluster0,Alzheimer's,20,False
+Edaravone,Amyotrophic Lateral Sclerosis,cube31_cluster0,Multiple Sclerosis,19,False
+Olesoxime,Amyotrophic Lateral Sclerosis,cube32_cluster0,Alzheimer's,17,False
+Tolcapone,Huntington's,cube35_cluster0,Parkinson's,19,False
+Tiapridal,Huntington's,cube27_cluster0,Parkinson's,18,False
+Dextromethorphan,Huntington's,cube16_cluster0,Alzheimer's,11,False
+EX 527,Huntington's,cube32_cluster0,Huntington's,24,True
+Ibudilast,Multiple Sclerosis,cube19_cluster0,Alzheimer's,45,False
+Solriamfetol,Multiple Sclerosis,cube14_cluster0,Parkinson's,20,False
+Prednisolone,Multiple Sclerosis,cube22_cluster0,Alzheimer's,18,False
+Idebenone,Multiple Sclerosis,cube15_cluster0,Alzheimer's,19,False
+quinidine,Multiple System Atrophy,cube20_cluster0,Alzheimer's,5,False
+Midodrine,Multiple System Atrophy,cube9_cluster0,Parkinson's,21,False
+Ioflupane I-123,Multiple System Atrophy,cube10_cluster0,Parkinson's,11,False
+Inosine 5'-monophosphate,Multiple System Atrophy,cube26_cluster0,Multiple Sclerosis,20,False
+Selegiline,Parkinson's,cube42_cluster0,Alzheimer's,19,False
+Pridopidine,Parkinson's,cube13_cluster0,Parkinson's,30,True
+apomorphine,Parkinson's,cube17_cluster0,Alzheimer's,26,False
+Lamotrigine,Parkinson's,cube28_cluster0,Alzheimer's,24,False
+Acetyl-L-carnitine,Spinal Muscular Atrophy,cube27_cluster0,Alzheimer's,18,False
+Valproic Acid,Spinal Muscular Atrophy,cube20_cluster0,Alzheimer's,26,False
+salbutamol,Spinal Muscular Atrophy,cube2_cluster0,Parkinson's,15,False
+Amifampridine Phosphate,Spinal Muscular Atrophy,cube34_cluster0,Multiple Sclerosis,13,False

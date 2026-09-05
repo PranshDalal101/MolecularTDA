@@ -1,0 +1,7 @@
+Approach,edges (current),edges (manuscript),nodes (current),nodes (manuscript),mean purity (current),mean purity (manuscript),connectivity (current),connectivity (manuscript),edge ratio (current),edge ratio (manuscript)
+Umap combined,103,407,58,138,0.341,0.3668,0.931,0.043055,1.7759,2.9493
+Umap pharmacokinetic and physicochemical,122,88,73,49,0.3377,0.3092,0.7808,0.9592,1.6712,1.7959
+Umap fingerprints,104,37,62,22,0.338,0.286,0.9677,0.9545,1.6774,1.6818
+Tsne combined,46,55,31,35,0.3252,0.3349,1.0,0.9714,1.4839,1.5714
+t-SNE pharmacokinetic and physicochemical,110,81,73,49,0.3218,0.3334,0.7808,1.0,1.5068,1.6531
+t-SNE Structural,62,84,39,40,0.3219,0.3192,0.9487,1.0,1.5897,2.1
