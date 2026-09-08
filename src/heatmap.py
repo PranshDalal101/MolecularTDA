@@ -3,20 +3,10 @@ heatmap.py
 ==========
 Spearman correlation heatmap between structural (fingerprint) and
 pharmacokinetic/physicochemical properties (manuscript Section 3.3.1,
-Figure 4).
-
-Spearman correlations are computed between every fingerprint bit and
-every physicochemical/pharmacokinetic property. Bits and properties are
-each ranked by their mean absolute correlation across the other axis, and
-the top 40 bits and top 20 properties are kept for the heatmap.
-
-Bit substructure names (optional)
-----------------------------------
-If you have PubChem's official fingerprint key list as a PDF, drop it at
-`data/list_fingerprints.pdf` and each bit will be labeled with its
-substructure description. Without it (or without `pdfplumber` installed),
-bits just fall back to generic "Bit_<n>" labels — the heatmap still
-renders correctly either way.
+Figure 4). Bits and properties are ranked by mean absolute correlation
+across the other axis; the top 40 bits and top 20 properties are kept.
+Bit labels fall back to "Bit_<n>" unless `data/list_fingerprints.pdf`
+and `pdfplumber` are available.
 
 Output: figures/figure4_correlation_heatmap.png
 """

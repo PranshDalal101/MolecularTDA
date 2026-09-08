@@ -2,19 +2,11 @@
 common_preprocessing.py
 ========================
 Shared data-loading and feature-matrix helpers used by every script in
-this folder: the isolation forest, the six mappers, and the mapper space.
-
-The master compound table is `data/zscore.csv`. Three feature sets are
-used across the six mapper approaches (Table 1):
-  1. "pharmacokinetic_physicochemical" — the numeric column block from
-     'ic50' through 'ConformerCount3D' (pharmacokinetic + physicochemical
-     + PubChem-computed descriptor columns). No fingerprint bits.
-  2. "structural" — the Fingerprint2D column, base64-decoded into an
-     881-bit binary vector (one bit per PubChem substructure key).
-  3. "combined" — the two above, concatenated.
-
-All paths below are resolved relative to this file's location, so every
-script in `src/` works regardless of the caller's current directory.
+this folder. The master compound table is `data/zscore.csv`. Three
+feature sets are used across the six mapper approaches (Table 1):
+"pharmacokinetic_physicochemical" (ic50-through-ConformerCount3D numeric
+columns), "structural" (Fingerprint2D decoded into 881 bits), and
+"combined" (both concatenated).
 """
 
 import base64

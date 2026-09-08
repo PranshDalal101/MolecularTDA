@@ -2,27 +2,13 @@
 persistent_homology.py
 ========================
 Persistent homology analysis per disease (manuscript Section 3.6,
-results in Section 4.5 / Figure 14 / Table 2).
+results in Section 4.5 / Figure 14 / Table 2). Builds a Vietoris-Rips
+filtration per disease up to dimension 1 (H0/H1) with `ripser`, then
+Spearman-correlates each disease's longest-lived H1 loop's cocycle
+membership against every molecular feature.
 
-For each disease, a Vietoris-Rips filtration (Euclidean distance) is
-built on that disease's pharmacokinetic/physicochemical compounds up to
-dimension 1 (H0 = connected components, H1 = loops), using `ripser` with
-cocycles enabled. Betti curves count live H0/H1 features across a range
-of filtration values; infinite death times are capped at the largest
-finite death observed for that disease.
-
-For each disease, the H1 interval with the longest lifetime is taken as
-its most persistent loop. Its representative cocycle gives a binary
-membership vector (which compounds participate in an edge of that
-cycle), which is then Spearman-correlated against every molecular
-feature to find what drives that loop's structure.
-
-Outputs
--------
-  figures/figure14_betti_curves_and_barcodes.png — panel A: H0/H1 Betti
-    curves per disease; panel B: H0/H1 persistence barcodes per disease
-  outputs/table2_persistent_h1_correlations.csv — significant (p<0.05)
-    feature correlations with the most persistent H1 loop, per disease
+Outputs: figures/figure14_betti_curves_and_barcodes.png,
+outputs/table2_persistent_h1_correlations.csv
 """
 
 import os

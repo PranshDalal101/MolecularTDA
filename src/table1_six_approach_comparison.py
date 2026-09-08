@@ -4,12 +4,7 @@ table1_six_approach_comparison.py
 Regenerates manuscript Table 1 (Section 4.2.1, "Six-Approach Comparison
 Table") by running each of the six final mapper configurations and
 computing nodes, edges, mean purity, connectivity, and edge ratio for
-each — using the same metric definitions as the sweep scripts
-(`common_preprocessing.compute_graph_metrics`).
-
-Run this after any change to the shared preprocessing (e.g. the
-fingerprint-decoding fix) to see how the six approaches' numbers actually
-compare today, against what's printed in the manuscript.
+each (`common_preprocessing.compute_graph_metrics`).
 
 Output: outputs/table1_six_approach_comparison.csv, printed to stdout.
 """

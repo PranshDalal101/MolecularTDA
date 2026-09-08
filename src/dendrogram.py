@@ -3,13 +3,9 @@ dendrogram.py
 =============
 Hierarchical clustering dendrogram of drug compounds by their combined
 pharmacokinetic, physicochemical, and structural properties, colored by
-disease association (manuscript Section 3.3.2, Figure 5).
-
-Duplicate drug names are dropped (keeping the first occurrence), drugs
-used across more than one disease are tracked separately and colored
-black rather than by a single disease, and clustering uses Ward linkage
-on the combined pharmacokinetic/physicochemical/structural feature
-matrix.
+disease association (manuscript Section 3.3.2, Figure 5). Ward linkage;
+duplicate drug names are dropped and drugs spanning multiple diseases
+are colored black.
 
 Output: figures/figure5_dendrogram.png
 """

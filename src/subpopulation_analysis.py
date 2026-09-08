@@ -2,25 +2,13 @@
 subpopulation_analysis.py
 ===========================
 Post-hoc statistical subpopulation analysis on Mapper nodes (manuscript
-Section 3.4.4 / 4.3), run on the combined dataset's two Mapper graphs
-(UMAP combined = Figure 12, t-SNE combined = Figure 11).
+Section 3.4.4 / 4.3), run on the combined dataset's UMAP and t-SNE
+Mapper graphs (Figures 12 and 11). Per node, molecular features are
+ranked by Cohen's d against the global dataset, and fingerprint bits by
+signed deviation from their global frequency; top 5 of each are kept.
 
-For each Mapper node, molecular (continuous) features and fingerprint
-(binary) bits are scored separately, since they need different
-treatments. Cohen's d is computed per node as (cluster_mean -
-global_mean) / pooled_std(cluster, global_dataset), using the standard
-pooled-variance formula, and molecular features are ranked by |d|.
-Fingerprint bit importance is the signed difference between a node's
-mean bit value and the bit's global frequency, ranked by magnitude. The
-top 5 of each are kept per node.
-
-Outputs
--------
-  outputs/subpopulation_umap_combined.csv
-  outputs/subpopulation_tsne_combined.csv
-Each row is one Mapper node: id, sample count, dominant disease, purity,
-plus its top-5 molecular features (name + Cohen's d) and top-5
-fingerprint bits (bit + signed difference).
+Outputs: outputs/subpopulation_umap_combined.csv,
+outputs/subpopulation_tsne_combined.csv
 """
 
 import os

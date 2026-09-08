@@ -4,15 +4,11 @@ isolation_forest.py
 Isolation Forest anomaly detection on the combined (pharmacokinetic +
 physicochemical + structural) drug-property dataset, visualized on both a
 UMAP and a t-SNE embedding (manuscript Section 3.2.3 / Figure 6).
+IsolationForest(contamination=0.05, n_estimators=100), fit on the
+combined feature matrix; the embeddings are just for 2D plotting, not a
+Mapper graph.
 
-Model: IsolationForest(contamination=0.05, n_estimators=100), fit on the
-combined feature matrix. UMAP and t-SNE embeddings of that same matrix
-are used purely to visualize the anomaly scores in 2D — they don't need
-to match the mapper figures' parameters, since they're just a projection
-for plotting, not a Mapper graph.
-
-Outputs: figures/figure6_isolation_forest.pdf / .png (2x2 grid: binary
-anomaly classification + continuous anomaly score, for each embedding).
+Output: figures/figure6_isolation_forest.pdf / .png
 """
 
 import matplotlib.gridspec as gridspec

@@ -3,40 +3,11 @@ mapper_space.py
 ================
 Fixed chemical space and drug projection pipeline (Section 3.5.2, Figure
 3; results in Section 4.4). Builds the UMAP combined mapper (Figure 12)
-as a reusable reference space and projects new compounds into it.
-
-Why UMAP and not t-SNE: t-SNE has no out-of-sample `.transform()` —
-projecting a new point requires recomputing the whole embedding, which
-would shift every existing drug's coordinates. UMAP's `.transform()`
-embeds a new point into an already-fitted space without moving anything
-else, so it's the only one of the six approaches usable as a fixed
-reference space for new compounds.
-
-Dependency: `data/zscore.csv` contains drugs already standardized using
-the mean/std of the original (pre-standardization) property table. To
-project a genuinely new compound, apply those same per-column mean/std
-values (and the log-transform used for IC50/EC50/KI) to its raw
-properties before calling `project_query()` — recomputing mean/std from
-`zscore.csv` itself would be wrong, since those columns are already
-~N(0, 1). This script expects `project_query()` to be handed an
-already-standardized feature vector (same column order as
-`get_pharmacokinetic_physicochemical_columns()`) plus the raw
-Fingerprint2D base64 string. If the normalization pipeline can export its
-fitted per-column mean/std, wire it in at `STANDARDIZATION_PARAMS_PATH`
-and `standardize_raw_row()` below instead of building the vector by hand.
-
-Usage
------
-    space = MapperSpace.build()          # fit once, ~minutes
-    space.save()                          # persist to outputs/mapper_space.pkl
-    space = MapperSpace.load()
-
-    result = space.project_query(
-        drug_name="Paliperidone",
-        standardized_features=my_standardized_vector,   # see note above
-        fingerprint_base64=my_fingerprint2d_string,
-    )
-    print(result.summary())
+as a reusable reference space and projects new compounds into it via
+UMAP's out-of-sample `.transform()` (t-SNE has none). `project_query()`
+expects an already-standardized feature vector matching
+`data/zscore.csv`'s column order, plus the raw Fingerprint2D base64
+string.
 """
 
 import os

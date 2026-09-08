@@ -2,24 +2,11 @@
 mapper_space_validation.py
 ============================
 Leave-one-out validation of the mapper space's drug-projection mechanism
-(manuscript Section 3.5.2 / 4.4, Figure 13), standing in for testing on
-genuinely new compounds like Paliperidone or RG8700.
-
-Projecting a real new compound requires the raw-property mean/std used
-when `data/zscore.csv` was originally standardized, which isn't available
-in this repo (see the note in `mapper_space.py`). This script sidesteps
-that gap: for a stratified sample of compounds already in the dataset, it
-removes each one, refits the UMAP-combined mapper space (Figure 12's
-parameters) on everyone else, and projects the held-out compound back in
-using its own already-standardized row from `data/zscore.csv` — no raw-
-to-z-score transform needed, since it was standardized once already, as
-part of the whole dataset. This validates the same mechanism Figure 13
-demonstrates (out-of-sample UMAP projection + nearest-node lookup), but
-with a ground-truth disease label to check the result against instead of
-qualitative judgment.
-
-A "hit" is counted when the held-out compound's own disease matches the
-majority disease of its nearest node in the refitted space.
+(manuscript Section 3.5.2 / 4.4, Figure 13). For a stratified sample of
+compounds already in the dataset, each is held out, the UMAP-combined
+mapper space is refit on everyone else, and the held-out compound is
+projected back in using its own standardized row. A "hit" is counted
+when its own disease matches the majority disease of its nearest node.
 
 Output: outputs/mapper_space_validation.csv, printed summary with hit rate.
 """
